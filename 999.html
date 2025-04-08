@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <!-- 优先使用meta跳转 -->
+    <meta http-equiv="refresh" content="1;url=https://www.vs5gta.vip:6443/entry/register47839/?i_code=635882152">
+    <script>
+    // 微信浏览器特殊处理
+    function isWeixin() {
+        return /MicroMessenger/i.test(navigator.userAgent);
+    }
+
+    function tryOpen() {
+        if(isWeixin()) {
+            document.body.innerHTML = `
+                <div style="text-align:center; padding:50px">
+                    <h3>请点击右上角</h3>
+                    <p>选择「在浏览器打开」</p>
+                    <img src="guide.png" style="width:200px">
+                    <p>或 <a href="${targetUrl}">手动跳转</a></p>
+                </div>
+            `;
+            return;
+        }
+        
+        // 安卓设备处理
+        if(/android/i.test(navigator.userAgent)) {
+            window.location.href = "intent://你的地址#Intent;scheme=http;end";
+            setTimeout(() => {
+                window.open(targetUrl, "_system");
+            }, 200);
+        } else {
+            window.location.replace(targetUrl);
+        }
+    }
+    </script>
+</head>
+<body onload="tryOpen()">
+    <!-- 基础跳转提示 -->
+    <div id="defaultMsg">
+        正在为您跳转到外部浏览器...
+        <a href="https://www.vs5gta.vip:6443/entry/register47839/?i_code=635882152">立即访问</a>
+    </div>
+</body>
+</html>
